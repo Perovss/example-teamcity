@@ -42,6 +42,11 @@ object Build : BuildType({
 
     steps {
         maven {
+            name = "maven master"
+
+            conditions {
+                equals("teamcity.build.branch.is_default", "true")
+            }
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
