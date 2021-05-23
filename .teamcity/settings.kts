@@ -59,6 +59,15 @@ object Build : BuildType({
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
+        maven {
+            name = "maven other"
+
+            conditions {
+                equals("teamcity.build.branch", "release")
+            }
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
     }
 
     triggers {
