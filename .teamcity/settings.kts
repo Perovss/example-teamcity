@@ -47,7 +47,7 @@ object Build : BuildType({
             scriptContent = "ls -la"
         }
         maven {
-            goals = "clean test"
+            goals = "clean compile"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
     }
