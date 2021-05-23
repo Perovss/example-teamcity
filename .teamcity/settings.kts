@@ -50,6 +50,10 @@ object Build : BuildType({
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
+        maven {
+            name = "maven other"
+            goals = "clean test"
+        }
     }
 
     triggers {
