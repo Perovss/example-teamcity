@@ -1,6 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -42,10 +41,6 @@ object Build : BuildType({
     }
 
     steps {
-        script {
-            name = "hello moto"
-            scriptContent = "ls -la"
-        }
         maven {
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
